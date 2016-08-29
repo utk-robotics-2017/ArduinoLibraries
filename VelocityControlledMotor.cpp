@@ -1,23 +1,23 @@
 #include "VelocityControlledMotor.h"
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, VPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, vPID vpid, double* input, double* setpoint, double* output)
 {
 	this->i2c = 1;
-	this->motor = motor;
-	this->i2cEncoder = encoder;
-	this->vpid = vpid;
+	this->motor = &motor;
+	this->i2cEncoder = &encoder;
+	this->vpid = &vpid;
 
 	this->input = input;
 	this->setpoint = setpoint;
 	this->output = output;
 }
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, VPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, vPID vpid, double* input, double* setpoint, double* output)
 {
     this->i2c = 0;
-    this->motor = motor;
-    this->encoder = encoder;
-    this->vpid = vpid;
+    this->motor = &motor;
+    this->encoder = &encoder;
+    this->vpid = &vpid;
     
     this->input = input;
     this->setpoint = setpoint;
@@ -26,28 +26,28 @@ VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, V
 
 void VelocityControlledMotor::setValue(int value)
 {
-	vpid.setMode(MANUAL);
-	motor.drive(value);
+	vpid->SetMode(MANUAL);
+	motor->drive(value);
 }
 	
-void VelocityControlledMotor::setVelocity(double velocity);
+void VelocityControlledMotor::setVelocity(double velocity)
 {
 	*setpoint = velocity;
-	vpid.setMode(AUTO);
+	vpid->SetMode(AUTOMATIC);
 }
 
 void VelocityControlledMotor::stop()
 {
-	vpid.setMode(MANUAL);
+	vpid->SetMode(MANUAL);
 	setValue(0);
 }
 
 void VelocityControlledMotor::runVPID()
 {
 	*input = getVelocity();
-	char updated = vpid.calculate();
+	char updated = vpid->Compute();
 	if(updated) {
-		motor.drive(*output);
+		motor->drive(*output);
 	}
 }
 
@@ -55,7 +55,7 @@ double VelocityControlledMotor::getVelocity()
 {
 	if(i2c)
     {
-        return i2cencoder.getVelocity();
+        return i2cEncoder->getVelocity();
     }
     else
     {
@@ -68,9 +68,10 @@ double VelocityControlledMotor::getPosition()
 {
 	if(i2c)
     {
-        return i2cencoder.getPosition();
+        return i2cEncoder->getPosition();
     }
     else
     {
-        return encoder.read();
+        return encoder->read();
+    }
 }

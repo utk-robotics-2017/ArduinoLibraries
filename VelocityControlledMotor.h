@@ -23,12 +23,11 @@ public:
 private:
     bool i2c;
 
-	Motor motor;
-	Encoder encoder;
-	I2CEncoder i2cEncoder;
-	Encoder encoder;
+	Motor* motor;
+	Encoder* encoder;
+	I2CEncoder* i2cEncoder;
     
-    vPID vpid;
+    vPID* vpid;
     double* input;
     double* setpoint;
     double* output;
