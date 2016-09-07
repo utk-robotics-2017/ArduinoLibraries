@@ -6,19 +6,18 @@
 
 class FourWheelDrive {
 public:
-	FourWheelDrive(Motor, Motor, Motor, Motor);
-	FourWheelDrive(VelocityControlledMotor, VelocityControlledMotor, VelocityControlledMotor, VelocityControlledMotor);
+	FourWheelDrive(Motor*, Motor*, Motor*, Motor*);
+	FourWheelDrive(VelocityControlledMotor*, VelocityControlledMotor*, VelocityControlledMotor*, VelocityControlledMotor*);
 
 	void drive(int, int, int, int);
 	void stop(int, int, int, int);
-	void drivePID(int, int, int, int);
+	void drivePID(double, double, double, double);
 	double getLeftPosition();
 	double getRightPosition();
 private:
 	char pid;
-	Motor lfm, rfm, lbm, rbm;
-	VelocityControlledMotor lf, rf, lb, rb;
+	Motor *lfm, *rfm, *lbm, *rbm;
+	VelocityControlledMotor *lf, *rf, *lb, *rb;
 
 };
-
 #endif
