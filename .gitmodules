@@ -7,3 +7,6 @@
 [submodule "I2CEncoder"]
 	path = I2CEncoder
 	url = git@github.com:utk-robotics-2017/I2CEncoder.git
+[submodule "Arduino-PID-Library"]
+	path = Arduino-PID-Library
+	url = git@github.com:utk-robotics-2017/Arduino-PID-Library.git
