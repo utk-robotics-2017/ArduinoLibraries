@@ -34,7 +34,7 @@ void FourWheelDrive::drive(int lf_value, int rf_value, int lb_value, int rb_valu
 	}
 }
 
-void FourWheelDrive::stop(int, int, int, int)
+void FourWheelDrive::stop()
 {
 	if(pid){
 		lf->stop();

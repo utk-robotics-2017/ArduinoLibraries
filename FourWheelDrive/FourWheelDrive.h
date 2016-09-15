@@ -10,7 +10,7 @@ public:
 	FourWheelDrive(VelocityControlledMotor*, VelocityControlledMotor*, VelocityControlledMotor*, VelocityControlledMotor*);
 
 	void drive(int, int, int, int);
-	void stop(int, int, int, int);
+	void stop();
 	void drivePID(double, double, double, double);
 	double getLeftPosition();
 	double getRightPosition();
