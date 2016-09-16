@@ -19,20 +19,9 @@ void Motor::drive(int speed)
 
   switch (type) {
   case MonsterMoto:
-
-    if (speed == 0) {
-      digitalWrite(inA, LOW);
-      digitalWrite(inB, LOW);
-      analogWrite(pwm, 0);
-    } else if (speed > 0) {
-      digitalWrite(inA, HIGH);
-      digitalWrite(inB, LOW);
-      analogWrite(pwm, speed);
-    } else {
-      digitalWrite(inA, LOW);
-      digitalWrite(inB, HIGH);
-      analogWrite(pwm, -1 * speed);
-    }
+    digitalWrite(inA, speed > 0);
+    digitalWrite(inB, speed < 0);
+    analogWrite(pwm, abs(speed));
     break;
 
   case RoverFive:
