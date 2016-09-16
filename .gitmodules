@@ -10,3 +10,6 @@
 [submodule "Arduino-PID-Library"]
 	path = Arduino-PID-Library
 	url = git@github.com:utk-robotics-2017/Arduino-PID-Library.git
+[submodule "CmdMessenger"]
+	path = CmdMessenger
+	url = git@github.com:utk-robotics-2017/Arduino-CmdMessenger.git
