@@ -14,6 +14,8 @@ public:
 	void drivePID(double, double, double, double);
 	double getLeftPosition();
 	double getRightPosition();
+    double getLeftVelocity();
+    double getRightVelocity();
 private:
 	char pid;
 	Motor *lfm, *rfm, *lbm, *rbm;

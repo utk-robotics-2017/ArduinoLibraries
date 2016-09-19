@@ -77,3 +77,21 @@ double FourWheelDrive::getRightPosition()
 	return 0.0;
 }
 
+
+double FourWheelDrive::getLeftVelocity()
+{
+    if(pid)
+    {
+        return lb->getVelocity();
+    }
+    return 0.0;
+}
+
+double FourWheelDrive::getRightVelocity()
+{
+    if(pid)
+    {
+        return rb->getVelocity();
+    }
+    return 0.0;
+}
