@@ -1,6 +1,3 @@
-[submodule "qtr-sensors-arduino"]
-	path = qtr-sensors-arduino
-	url = https://github.com/pololu/qtr-sensors-arduino.git
 [submodule "fastgpio-arduino"]
 	path = fastgpio-arduino
 	url = https://github.com/pololu/fastgpio-arduino.git
@@ -13,3 +10,6 @@
 [submodule "CmdMessenger"]
 	path = CmdMessenger
 	url = git@github.com:utk-robotics-2017/Arduino-CmdMessenger.git
+[submodule "Pololu-QTR-LineSensor"]
+	path = Pololu-QTR-LineSensor
+	url = git@github.com:utk-robotics-2017/Pololu-QTR-LineSensor.git
