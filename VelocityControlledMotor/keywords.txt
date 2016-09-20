@@ -1,0 +1,7 @@
+VelocityControlledMotor KEYWORD1
+setValue KEYWORD2
+setVelocity KEYWORD2
+stop KEYWORD2
+runVPID KEYWORD2
+getVelocity KEYWORD2
+getPosition KEYWORD2
