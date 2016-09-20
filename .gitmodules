@@ -1,6 +1,3 @@
-[submodule "fastgpio-arduino"]
-	path = fastgpio-arduino
-	url = https://github.com/pololu/fastgpio-arduino.git
 [submodule "I2CEncoder"]
 	path = I2CEncoder
 	url = git@github.com:utk-robotics-2017/I2CEncoder.git
