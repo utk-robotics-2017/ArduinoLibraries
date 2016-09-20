@@ -1,6 +1,6 @@
 # ArduinoLibraries
 
-QTR Sensors: [![Build Status](https://travis-ci.org/pololu/qtr-sensors-arduino.svg?branch=master)](https://travis-ci.org/pololu/qtr-sensors-arduino)
+QTR Sensors: [![Build Status](https://travis-ci.org/utk-robotics-2017/Pololu-QTR-LineSensor.svg?branch=master)](https://travis-ci.org/utk-robotics/Pololu-QTR-LineSensor)
 
 Fast GPIO: [![Build Status](https://travis-ci.org/pololu/fastgpio-arduino.svg?branch=master)](https://travis-ci.org/pololu/fastgpio-arduino)
 
