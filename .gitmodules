@@ -1,12 +1,16 @@
 [submodule "I2CEncoder"]
 	path = I2CEncoder
 	url = https://github.com/utk-robotics-2017/I2CEncoder.git
+	branch = master
 [submodule "Arduino-PID-Library"]
 	path = PID
 	url = https://github.com/utk-robotics-2017/Arduino-PID-Library.git
+	branch = master
 [submodule "CmdMessenger"]
 	path = CmdMessenger
 	url = https://github.com/utk-robotics-2017/Arduino-CmdMessenger.git
+	branch = master
 [submodule "Pololu-QTR-LineSensor"]
 	path = Pololu-QTR-LineSensor
 	url = https://github.com/utk-robotics-2017/Pololu-QTR-LineSensor.git
+	branch = master
