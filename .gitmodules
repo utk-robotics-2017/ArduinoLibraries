@@ -1,12 +1,12 @@
 [submodule "I2CEncoder"]
 	path = I2CEncoder
-	url = git@github.com:utk-robotics-2017/I2CEncoder.git
+	url = https://github.com/utk-robotics-2017/I2CEncoder.git
 [submodule "Arduino-PID-Library"]
 	path = PID
-	url = git@github.com:utk-robotics-2017/Arduino-PID-Library.git
+	url = https://github.com/utk-robotics-2017/Arduino-PID-Library.git
 [submodule "CmdMessenger"]
 	path = CmdMessenger
-	url = git@github.com:utk-robotics-2017/Arduino-CmdMessenger.git
+	url = https://github.com/utk-robotics-2017/Arduino-CmdMessenger.git
 [submodule "Pololu-QTR-LineSensor"]
 	path = Pololu-QTR-LineSensor
-	url = git@github.com:utk-robotics-2017/Pololu-QTR-LineSensor.git
+	url = https://github.com/utk-robotics-2017/Pololu-QTR-LineSensor.git
