@@ -82,7 +82,7 @@ double FourWheelDrive::getLeftVelocity()
 {
     if(pid)
     {
-        return lb->getVelocity();
+        return (lf->getVelocity() + lb->getVelocity()) / 2.0;
     }
     return 0.0;
 }
@@ -91,7 +91,44 @@ double FourWheelDrive::getRightVelocity()
 {
     if(pid)
     {
+        return (rf->getVelocity() + rb->getVelocity()) / 2.0;
+    }
+    return 0.0;
+}
+
+double FourWheelDrive::getLeftFrontVelocity()
+{
+    if(pid)
+    {
+        return lf->getVelocity();
+    }
+    return 0.0;
+}
+
+double FourWheelDrive::getLeftBackVelocity()
+{
+    if(pid)
+    {
+        return lb->getVelocity();
+    }
+    return 0.0;
+}
+
+double FourWheelDrive::getRightFrontVelocity()
+{
+    if(pid)
+    {
+        return rf->getVelocity();
+    }
+    return 0.0;
+}
+
+double FourWheelDrive::getRightBackVelocity()
+{
+    if(pid)
+    {
         return rb->getVelocity();
     }
     return 0.0;
 }
+

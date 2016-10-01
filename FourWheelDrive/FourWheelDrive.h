@@ -16,6 +16,10 @@ public:
 	double getRightPosition();
     double getLeftVelocity();
     double getRightVelocity();
+    double getLeftFrontVelocity();
+    double getLeftBackVelocity();
+    double getRightFrontVelocity();
+    double getRightBackVelocity();
 private:
 	char pid;
 	Motor *lfm, *rfm, *lbm, *rbm;
