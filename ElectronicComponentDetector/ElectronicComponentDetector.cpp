@@ -484,10 +484,11 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
   }
 
   disableSwitches();
-
+  if(debug) {
   for(char i = 0;i<5;i++) {
     Serial.print(code[i]);
     if(i<4) {Serial.print(",");}
   }
   Serial.println("");
+  }
 }
