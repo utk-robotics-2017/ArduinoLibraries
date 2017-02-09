@@ -22,10 +22,10 @@
 #define EasyDriver_h
 
 // library interface description
-class Stepper {
+class EasyStepper {
  public:
    // constructors:
-   Stepper(int number_of_steps, int dir_pin, int step_pin);
+   Stepper(int number_of_steps, int dir_pin, int step_pin, long initial_speed);
 
    // speed setter method:
    void setSpeed(long whatSpeed);

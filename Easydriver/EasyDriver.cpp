@@ -18,21 +18,20 @@
 
 
 #include "Arduino.h"
-//#include "WProgram.h"
 #include "EasyDriver.h"
 
 /*
 * EasyDriver constructor.
 * Sets Direction and Step Pins.
 */
-Stepper::Stepper(int number_of_steps, int dir_pin, int step_pin)
+EasyStepper::EasyStepper(int number_of_steps, int dir_pin, int step_pin, long inital_speed)
 {
  this->step_number = 0;      // which step the motor is on
- this->speed = 0;        // the motor speed, in revolutions per minute
  this->direction = 0;      // motor direction
  this->last_step_time = 0;    // time stamp in ms of the last step taken
  this->number_of_steps = number_of_steps;    // total number of steps for this motor
- 
+ this->initial_speed = initial_speed;
+
  // Arduino pins for the motor control connection:
  this->dir_pin = dir_pin;
  this->step_pin = step_pin;
@@ -41,12 +40,8 @@ Stepper::Stepper(int number_of_steps, int dir_pin, int step_pin)
  pinMode(this->dir_pin, OUTPUT);
  pinMode(this->step_pin, OUTPUT);
  
- // When there are only 2 pins, set the other two to 0:
- //this->motor_pin_3 = 0;
- //this->motor_pin_4 = 0;
- 
- // pin_count is used by the stepMotor() method:
- //this->pin_count = 2;
+ // set initial speed
+ setSpeed(initial_speed);
 }
 
 
@@ -54,7 +49,7 @@ Stepper::Stepper(int number_of_steps, int dir_pin, int step_pin)
  Sets the speed in revs per minute
  Set between 0 and 100 probably
 */
-void Stepper::setSpeed(long whatSpeed)
+void EasyStepper::setSpeed(long whatSpeed)
 {
  this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
 }
@@ -63,7 +58,7 @@ void Stepper::setSpeed(long whatSpeed)
  Moves the motor steps_to_move steps.  If the number is negative, 
   the motor moves in the reverse direction.
 */
-void Stepper::step(int steps_to_move)
+void EasyStepper::step(int steps_to_move)
 {  
  int steps_left = abs(steps_to_move);  // how many steps to take
  
@@ -103,7 +98,7 @@ void Stepper::step(int steps_to_move)
 /*
 * Moves the motor forward or backwards.
 */
-void Stepper::stepMotor(int thisDir)
+void EasyStepper::stepMotor(int thisDir)
 {
      digitalWrite(dir_pin, thisDir);
        delayMicroseconds(100);
@@ -117,7 +112,7 @@ void Stepper::stepMotor(int thisDir)
 * Steps based on angle in degrees (0-360)
 * FIGURE OUT STEPS
 */
-void Stepper::stepAng(long angle) {
+void EasyStepper::stepAng(long angle) {
 	long s = number_of_steps;
 	step(int(s*(angle/360.0))); // ugly, but works
 }
@@ -125,7 +120,7 @@ void Stepper::stepAng(long angle) {
 /*
  version() returns the version of the library:
 */
-int Stepper::version(void)
+int EasyStepper::version(void)
 {
  return .01;
 }
