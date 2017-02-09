@@ -25,11 +25,12 @@ class Magnetometer
     public:
         Magnetometer();
         void config();
+        void zero();
         int readX();
         int readY();
         int readZ();
     private:
         int address;
-}
+};
 
 #endif
