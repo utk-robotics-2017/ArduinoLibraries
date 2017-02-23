@@ -123,8 +123,10 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
 
                 if(temp_dc_read <= 5.0) {
                     code[pad] = 1;
-                } else if((temp_dc_read <= 1100.0) && (temp_dc_read >= 950.0)) {
-                    code[pad] = 2;
+                } else if((temp_dc_read <= 1200.0) && (temp_dc_read >= 880.0)) {
+                    code[pad] = 2; 
+				} else if((temp_dc_read <= 80.0) && (temp_dc_read >= 45.0)) { 
+					code[pad] = 4; 
                 } else if((((temp_dc_read <= 600.0) && (temp_dc_read >= 400.0))) || ((temp_dc_read >= (Maximum_Voltage - 300.0)) && (temp_dc_read <= (Maximum_Voltage + 300.0)))) {
                     code[pad] = 5;
                 } else {
@@ -195,8 +197,10 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
 
                 if(temp_dc_read <= 5.0) {
                     code[pad] = 1;
-                } else if((temp_dc_read <= 1100.0) && (temp_dc_read >= 950.0)) {
-                    code[pad] = 2;
+                } else if((temp_dc_read <= 1200.0) && (temp_dc_read >= 880.0)) {
+                    code[pad] = 2; 
+				} else if((temp_dc_read <= 80.0) && (temp_dc_read >= 45.0)) { 
+					code[pad] = 4; 
                 } else if((((temp_dc_read <= 600.0) && (temp_dc_read >= 400.0))) || ((temp_dc_read >= (Maximum_Voltage - 300.0)) && (temp_dc_read <= (Maximum_Voltage + 300.0)))) {
                     code[pad] = 5;
                 } else {
@@ -266,8 +270,10 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
 
                 if(temp_dc_read <= 5.0) {
                     code[pad] = 1;
-                } else if((temp_dc_read <= 1100.0) && (temp_dc_read >= 950.0)) {
-                    code[pad] = 2;
+                } else if((temp_dc_read <= 1200.0) && (temp_dc_read >= 880.0)) {
+                    code[pad] = 2; 
+				} else if((temp_dc_read <= 80.0) && (temp_dc_read >= 45.0)) { 
+					code[pad] = 4; 
                 } else if((((temp_dc_read <= 600.0) && (temp_dc_read >= 400.0))) || ((temp_dc_read >= (Maximum_Voltage - 300.0)) && (temp_dc_read <= (Maximum_Voltage + 300.0)))) {
                     code[pad] = 5;
                 } else {
@@ -337,8 +343,10 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
 
                 if(temp_dc_read <= 5.0) {
                     code[pad] = 1;
-                } else if((temp_dc_read <= 1100.0) && (temp_dc_read >= 950.0)) {
-                    code[pad] = 2;
+                } else if((temp_dc_read <= 1200.0) && (temp_dc_read >= 880.0)) {
+                    code[pad] = 2; 
+				} else if((temp_dc_read <= 80.0) && (temp_dc_read >= 45.0)) { 
+					code[pad] = 4; 
                 } else if((((temp_dc_read <= 600.0) && (temp_dc_read >= 400.0))) || ((temp_dc_read >= (Maximum_Voltage - 300.0)) && (temp_dc_read <= (Maximum_Voltage + 300.0)))) {
                     code[pad] = 5;
                 } else {
@@ -408,8 +416,10 @@ void ElectronicComponentDetector::decode(char pad, char* code, char debug) {
 
                 if(temp_dc_read <= 5.0) {
                     code[pad] = 1;
-                } else if((temp_dc_read <= 1100.0) && (temp_dc_read >= 950.0)) {
-                    code[pad] = 2;
+                } else if((temp_dc_read <= 1200.0) && (temp_dc_read >= 880.0)) {
+                    code[pad] = 2; 
+				} else if((temp_dc_read <= 80.0) && (temp_dc_read >= 45.0)) { 
+					code[pad] = 4; 
                 } else if((((temp_dc_read <= 600.0) && (temp_dc_read >= 400.0))) || ((temp_dc_read >= (Maximum_Voltage - 300.0)) && (temp_dc_read <= (Maximum_Voltage + 300.0)))) {
                     code[pad] = 5;
                 } else {
