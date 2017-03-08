@@ -24,13 +24,13 @@
 * EasyDriver constructor.
 * Sets Direction and Step Pins.
 */
-EasyStepper::EasyStepper(int number_of_steps, int dir_pin, int step_pin, long inital_speed)
+EasyStepper::EasyStepper(int number_of_steps, int dir_pin, int step_pin, long initial_speed)
 {
  this->step_number = 0;      // which step the motor is on
  this->direction = 0;      // motor direction
  this->last_step_time = 0;    // time stamp in ms of the last step taken
  this->number_of_steps = number_of_steps;    // total number of steps for this motor
- this->initial_speed = initial_speed;
+ this->speed = initial_speed;
 
  // Arduino pins for the motor control connection:
  this->dir_pin = dir_pin;
