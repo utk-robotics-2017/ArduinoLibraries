@@ -4,19 +4,19 @@
 #include "Motor.h"
 #include "I2CEncoder.h"
 #include "Encoder.h"
-#include "vPID.h"
+#include "PID.h"
 
 class VelocityControlledMotor
 {
 public:
-	VelocityControlledMotor(Motor, I2CEncoder, vPID, double* input, double* setpoint, double* output);
-    VelocityControlledMotor(Motor, Encoder, vPID, double* input, double* setpoint, double* output);
+	VelocityControlledMotor(Motor, I2CEncoder, PID, double* input, double* setpoint, double* output);
+    VelocityControlledMotor(Motor, Encoder, PID, double* input, double* setpoint, double* output);
 
 	void setValue(int);
 	void setVelocity(double);
 	void stop();
 
-    void runVPID();
+    void runPID();
 
 	double getVelocity();
 	double getPosition();
@@ -27,7 +27,7 @@ private:
 	Encoder* encoder;
 	I2CEncoder* i2cEncoder;
     
-    vPID* vpid;
+    PID* pid;
     double* input;
     double* setpoint;
     double* output;

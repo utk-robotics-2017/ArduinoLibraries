@@ -1,23 +1,23 @@
 #include "VelocityControlledMotor.h"
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, vPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, PID pid, double* input, double* setpoint, double* output)
 {
 	this->i2c = 1;
 	this->motor = &motor;
 	this->i2cEncoder = &encoder;
-	this->vpid = &vpid;
+	this->pid = &pid;
 
 	this->input = input;
 	this->setpoint = setpoint;
 	this->output = output;
 }
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, vPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, PID pid, double* input, double* setpoint, double* output)
 {
     this->i2c = 0;
     this->motor = &motor;
     this->encoder = &encoder;
-    this->vpid = &vpid;
+    this->pid = &pid;
     
     this->input = input;
     this->setpoint = setpoint;
@@ -26,26 +26,26 @@ VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, v
 
 void VelocityControlledMotor::setValue(int value)
 {
-	vpid->SetMode(MANUAL);
+	pid->SetMode(MANUAL);
 	motor->drive(value);
 }
 	
 void VelocityControlledMotor::setVelocity(double velocity)
 {
 	*setpoint = velocity;
-	vpid->SetMode(AUTOMATIC);
+	pid->SetMode(AUTOMATIC);
 }
 
 void VelocityControlledMotor::stop()
 {
-	vpid->SetMode(MANUAL);
+	pid->SetMode(MANUAL);
 	setValue(0);
 }
 
-void VelocityControlledMotor::runVPID()
+void VelocityControlledMotor::runPID()
 {
 	*input = getVelocity();
-	char updated = vpid->Compute();
+	char updated = pid->Compute();
 	if(updated) {
 		motor->drive(*output);
 	}
