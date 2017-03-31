@@ -51,7 +51,7 @@ class UnderDampedPID
 	int GetMode();						  //  inside the UnderDampedPID.
 	int GetDirection();					  //
 
-    void SetAllowedDirection(int)
+    void SetAllowedDirection(int);
 
   protected:
 	void Initialize();

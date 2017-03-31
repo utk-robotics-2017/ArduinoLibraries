@@ -30,7 +30,7 @@ UnderDampedPID::UnderDampedPID(double* Input, double* Output, double* Setpoint,
 
     UnderDampedPID::SetControllerDirection(ControllerDirection);
     UnderDampedPID::SetTunings(Kp, Ki, Kd);
-/
+
     lastTime = millis()-SampleTime;				
 }
  
@@ -64,7 +64,7 @@ bool UnderDampedPID::Compute()
 
       // "Underdamped part"
       if(allowedDirection == DIRECT){
-          if(output < 0) ouput = 0;
+          if(output < 0) output = 0;
       } else {
           if(output > 0) output = 0;
       }
