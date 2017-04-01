@@ -16,6 +16,7 @@ public:
   double getVelocity();
 
   void setAllowedDirection(int);
+  void setMode(int);
   
   void stop();
   

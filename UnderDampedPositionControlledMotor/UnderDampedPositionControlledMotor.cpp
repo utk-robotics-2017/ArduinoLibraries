@@ -39,6 +39,11 @@ void UnderDampedPositionControlledMotor::setAllowedDirection(int value)
     pid->SetAllowedDirection(value);
 }
 
+void UnderDampedPositionControlledMotor::setMode(int mode)
+{
+    pid->SetMode(mode);
+}
+
 void UnderDampedPositionControlledMotor::stop()
 {
     setValue(0);
