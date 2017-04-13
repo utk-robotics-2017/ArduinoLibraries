@@ -1,6 +1,6 @@
 #include "VelocityControlledMotor.h"
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, vPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder, vPID vpid, double* input, double* output, double* setpoint)
 {
 	this->i2c = 1;
 	this->motor = &motor;
@@ -8,20 +8,20 @@ VelocityControlledMotor::VelocityControlledMotor(Motor motor, I2CEncoder encoder
 	this->vpid = &vpid;
 
 	this->input = input;
-	this->setpoint = setpoint;
 	this->output = output;
+	this->setpoint = setpoint;
 }
 
-VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, vPID vpid, double* input, double* setpoint, double* output)
+VelocityControlledMotor::VelocityControlledMotor(Motor motor, Encoder encoder, vPID vpid, double* input, double* output, double* setpoint)
 {
     this->i2c = 0;
     this->motor = &motor;
     this->encoder = &encoder;
     this->vpid = &vpid;
-    
+
     this->input = input;
-    this->setpoint = setpoint;
     this->output = output;
+    this->setpoint = setpoint;
 }
 
 void VelocityControlledMotor::setValue(int value)
@@ -29,7 +29,7 @@ void VelocityControlledMotor::setValue(int value)
 	vpid->SetMode(MANUAL);
 	motor->drive(value);
 }
-	
+
 void VelocityControlledMotor::setVelocity(double velocity)
 {
 	*setpoint = velocity;

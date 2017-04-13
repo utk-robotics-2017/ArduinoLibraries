@@ -9,8 +9,8 @@
 class VelocityControlledMotor
 {
 public:
-	VelocityControlledMotor(Motor, I2CEncoder, vPID, double* input, double* setpoint, double* output);
-    VelocityControlledMotor(Motor, Encoder, vPID, double* input, double* setpoint, double* output);
+	VelocityControlledMotor(Motor, I2CEncoder, vPID, double* input, double* output, double* setpoint);
+    VelocityControlledMotor(Motor, Encoder, vPID, double* input, double* output, double* setpoint);
 
 	void setValue(int);
 	void setVelocity(double);
@@ -26,11 +26,11 @@ private:
 	Motor* motor;
 	Encoder* encoder;
 	I2CEncoder* i2cEncoder;
-    
+
     vPID* vpid;
     double* input;
-    double* setpoint;
     double* output;
+    double* setpoint;
 };
 
 #endif

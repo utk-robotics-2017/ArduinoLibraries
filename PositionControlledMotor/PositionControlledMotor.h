@@ -8,24 +8,24 @@
 class PositionControlledMotor
 {
 public:
-  PositionControlledMotor(Motor&, I2CEncoder&, PID&, double* input, double* output, double* setpoint);
+    PositionControlledMotor(Motor&, I2CEncoder&, PID&, double* input, double* output, double* setpoint);
 
-  void setValue(int);
-  void setPosition(double);
-  double getPosition();
-  
-  void stop();
-  
-  void runPID();
+    void setValue(int);
+    void setPosition(double);
+    double getPosition();
+
+    void stop();
+
+    void runPID();
 
 private:
-  Motor* motor;
-  I2CEncoder* i2cEncoder;
-  PID* pid;
+    Motor* motor;
+    I2CEncoder* i2cEncoder;
+    PID* pid;
 
-  double* input;
-  double* setpoint;
-  double* output;
+    double* input;
+    double* setpoint;
+    double* output;
 };
 
 #endif //POSITIONCONTROLLEDMOTOR_H
