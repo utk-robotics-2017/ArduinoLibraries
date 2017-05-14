@@ -1,6 +1,0 @@
-UnderDampedPositionControlledMotor KEYWORD1
-setValue KEYWORD2
-setPosition KEYWORD2
-getPosition KEYWORD2
-stop KEYWORD2
-runPID KEYWORD2
