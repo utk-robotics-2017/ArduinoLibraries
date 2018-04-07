@@ -2,7 +2,7 @@
 #include "RoboClaw.h"
 
 #define MAXRETRY 2
-#define MAXRESETRETRY 2
+#define MAXRESETRETRY 1
 #define SetDWORDval(arg) (uint8_t)(((uint32_t)arg)>>24),(uint8_t)(((uint32_t)arg)>>16),(uint8_t)(((uint32_t)arg)>>8),(uint8_t)arg
 #define SetWORDval(arg) (uint8_t)(((uint16_t)arg)>>8),(uint8_t)arg
 
@@ -208,7 +208,7 @@ bool RoboClaw::write_n(uint8_t cnt, ... )
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
@@ -297,7 +297,7 @@ bool RoboClaw::read_n(uint8_t cnt,uint8_t address,uint8_t cmd,...)
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
@@ -349,7 +349,7 @@ uint8_t RoboClaw::Read1(uint8_t address,uint8_t cmd,bool *valid){
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
@@ -407,7 +407,7 @@ uint16_t RoboClaw::Read2(uint8_t address,uint8_t cmd,bool *valid){
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
@@ -478,7 +478,7 @@ uint32_t RoboClaw::Read4(uint8_t address, uint8_t cmd, bool *valid){
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
@@ -555,7 +555,7 @@ uint32_t RoboClaw::Read4_1(uint8_t address, uint8_t cmd, uint8_t *status, bool *
         } while(trys--);
 
         // close and reopen the serial interface
-        flush();
+        hserial->clear();
         hserial->end();
         hserial->begin(m_baud);
 
