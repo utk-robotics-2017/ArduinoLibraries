@@ -4,16 +4,15 @@
 class NavX
 {
 public:
-  NavX();
-  float getYaw();
-  float getPitch();
-  float getRoll();
+  static float getYaw();
+  static float getPitch();
+  static float getRoll();
 
-  char getStatus();
+  static char getStatus();
 
 private:
-  char* read(char register_, char num_bytes);
-  int m_address;
+  static char* read(char register_, char num_bytes);
+  static int m_address;
 };
 
 #endif // NAVX_H

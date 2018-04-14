@@ -5,10 +5,7 @@
 
 #include "IMURegisters.h"
 
-NavX::NavX()
-{
-  m_address = 0x32;
-}
+int NavX::m_address = 0x32;
 
 float NavX::getYaw()
 {
