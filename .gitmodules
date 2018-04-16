@@ -14,3 +14,9 @@
 	path = Pololu-QTR-LineSensor
 	url = https://github.com/utk-robotics-2017/Pololu-QTR-LineSensor.git
 	branch = master
+[submodule "Adafruit_Sensor"]
+	path = Adafruit_Sensor
+	url = git@github.com:utk-robotics-2017/Adafruit_Sensor.git
+[submodule "Adafruit_BNO055"]
+	path = Adafruit_BNO055
+	url = git@github.com:utk-robotics-2017/Adafruit_BNO055.git
